@@ -11,6 +11,7 @@
   <!--script src="https://www.google.com/recaptcha/api.js" async defer></script-->
   <script src='{% static "bootstrap/js/src/tela_login.js" %}'></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  {% csrf_token %}
 </head>
 <body>
   <!-- Estrutura da caixa de login -->
@@ -21,7 +22,11 @@
     <h2>Login</h2>
     <!-- Formulário de login -->
     <form method="post" action="{% url 'login' %}">
+
+
   <!-- Campo de entrada para o nome de usuário -->
+      {% csrf_token %}
+
   <div class="user-box">
     <input type="text" name="username" required>
     <label>Usuário:</label>
@@ -55,18 +60,6 @@
         <button id="submit">Enviar</button>
       </div>
     </div>
-    <!--
-    <div class="Termo">
-    Ao entrar no Ged One, você concorda com os nossos <br>Termos e
-     <b>Política de Privacidade.</b><br>
-    Este site é protegido pela reCAPTCHA Enterprise. Aplicam-se a 
-    <a href="https://policies.google.com/privacy">Política de Privacidade</a> <br>
-     e os <a href="https://policies.google.com/terms">Termos de Uso</a>
-     </div>
-    -->
-
-
-
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+{% csrf_token %}
 </body>
 </html>
